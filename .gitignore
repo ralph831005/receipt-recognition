@@ -1,0 +1,11 @@
+.ipynb_checkpoints/
+__pycache__/
+output/
+image/
+
+.*.swp
+.python-version
+*.log
+
+*.ipynb
+secrets.yaml
