@@ -11,7 +11,12 @@ def main(args):
         key = yaml.safe_load(fp)['llm_api_key']
     recognizer = GenAIReceiptRecognizer(key, args.model_name)
     result = recognizer.parse(args.image_path)
-    output_path = os.path.basename(args.image_path).split('.', 1)[0] + '_result.json'
+    
+    # output will be in './output'
+    output_dir = os.path.join(os.getcwd(), 'output')
+    os.makedirs(output_dir, exist_ok=True)
+
+    output_path = os.path.join(output_dir, os.path.basename(args.image_path).split('.', 1)[0] + '_result.json')
     with open(output_path, 'w') as fp:
         fp.write(json.dumps(result))
 
