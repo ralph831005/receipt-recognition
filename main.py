@@ -3,13 +3,13 @@ import json
 import os
 import yaml
 
-from receipt_recognizer import GenAIReceiptRecognizer
+from receipt_parser import GenAIReceiptParser
 
 
 def main(args):
     with open(args.secrets, 'r') as fp:
         key = yaml.safe_load(fp)['llm_api_key']
-    recognizer = GenAIReceiptRecognizer(key, args.model_name)
+    recognizer = GenAIReceiptParser(key, args.model_name)
     result = recognizer.parse(args.image_path)
     
     # output will be in './output'

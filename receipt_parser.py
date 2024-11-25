@@ -6,13 +6,13 @@ import os
 import google.generativeai as genai
 
 
-class ReceiptRecognizer(metaclass=abc.ABCMeta):
+class ReceiptParser(metaclass=abc.ABCMeta):
     @abc.abstractmethod
     def parse(self, image_path):
         raise NotImplementedError
 
 
-class GenAIReceiptRecognizer(ReceiptRecognizer):
+class GenAIReceiptParser(ReceiptParser):
     '''
     An gemini based solution for receipt photo processing.
     This needs a gemini api key for querying the llm model.
