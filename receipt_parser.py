@@ -17,10 +17,10 @@ class GenAIReceiptParser(ReceiptParser):
     An gemini based solution for receipt photo processing.
     This needs a gemini api key for querying the llm model.
     '''
-    TASK = '''List all the items and prices in the receipt. List the store name, total price, tax, and tax rate.'''
+    TASK = '''List all the items and prices in the receipt. List the store name, total price, tax, tax rate, and purchase date.'''
     SCHEMA = [
         "Item = {'item': str, 'price': float}",
-        "Receipt = {'store': str, 'total_price': float, 'tax': float, 'tax_rate': float, 'items': list[Item]}",
+        "Receipt = {'store': str, 'total_price': float, 'tax': float, 'tax_rate': float, 'purchase_date': str, 'items': list[Item]}",
         "Return: Receipt"
     ]
     VALID_MODELNAME = set(['gemini-1.5-pro-latest'])
