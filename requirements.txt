@@ -5,3 +5,4 @@
 # New Solution
 google-generativeai
 ipywidgets
+Pyro5

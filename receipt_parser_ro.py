@@ -1,3 +1,4 @@
+#! /usr/bin/env python
 from Pyro5.api import expose, serve
 import yaml
 
