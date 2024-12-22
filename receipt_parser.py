@@ -23,7 +23,7 @@ class GenAIReceiptParser(ReceiptParser):
         "Receipt = {'store': str, 'total_price': float, 'tax': float, 'tax_rate': float, 'purchase_date': str, 'items': list[Item]}",
         "Return: Receipt"
     ]
-    VALID_MODELNAME = set(['gemini-1.5-pro-latest'])
+    VALID_MODELNAME = set(['gemini-1.5-pro-latest', 'gemini-2.0-flash-exp'])
 
     def __init__(self, key, model_name, check_integration=False):
         assert model_name in self.VALID_MODELNAME

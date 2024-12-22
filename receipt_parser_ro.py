@@ -20,4 +20,11 @@ def parse_args():
     return parser.parse_args()
 
 if __name__ == '__main__':
+    import logging
+    logging.basicConfig(
+        filename='genai.log',
+        encoding='utf-8',
+        format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
+        level=logging.INFO,
+    )
     main(parse_args())
